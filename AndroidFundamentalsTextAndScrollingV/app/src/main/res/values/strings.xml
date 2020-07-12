@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AndroidFundamentalsTextAndScrollingV</string>
+    <string name="textview_article_title">Article Title</string>
+    <string name="textview_article_subtitle">Article SubTitle</string>
+    <string name="textview_article">Article Text</string>
 </resources>
