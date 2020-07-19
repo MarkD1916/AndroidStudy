@@ -4,16 +4,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.EmbossMaskFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private Intent goToSecAct;
 
     private EditText mMessageEditText;
@@ -31,11 +28,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchSecondActivity (View view){
-        //Log.d(LOG_TAG, "Button clicked!");
         String message = mMessageEditText.getText().toString();
         goToSecAct = new Intent(this,SecondActivity.class);
         goToSecAct.putExtra(EXTRA_MASSAGE,message);
-        //startActivity(goToSecAct);
         startActivityForResult(goToSecAct,TEXT_REQUEST);
 
     }
@@ -45,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==TEXT_REQUEST){
             if (resultCode==RESULT_OK){
+                if (data == null) {
+                    throw new AssertionError();
+                }
                 String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
                 mReplyText.setVisibility(View.VISIBLE);
                 mReplyText.setText(reply);

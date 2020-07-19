@@ -6,4 +6,5 @@
     <string name="reply">Reply</string>
     <string name="enter_your_reply_here">enter your reply here</string>
     <string name="reply_message">reply_message</string>
+    <string name="message_reply">Message reply</string>
 </resources>
