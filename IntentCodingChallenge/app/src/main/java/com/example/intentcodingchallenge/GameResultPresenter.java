@@ -1,70 +1,44 @@
 package com.example.intentcodingchallenge;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
-class Rule{
-    private int firsPlayerDim;
-    private int secondPlayerDim;
-    private int[][] ruleMatrix;
+import android.view.View;
+import android.widget.Toast;
 
-    public void setFirsPlayerDim(int firsPlayerDim) {
-        this.firsPlayerDim = firsPlayerDim;
-    }
-
-    public void setSecondPlayerDim(int secondPlayerDim) {
-        this.secondPlayerDim = secondPlayerDim;
-    }
-
-    public int getFirsPlayerDim() {
-        return firsPlayerDim;
-    }
-
-    public int getSecondPlayerDim() {
-        return secondPlayerDim;
-    }
-
-    public int[][] getRuleMatrix() {
-        return ruleMatrix;
-    }
-
-    public void setRuleMatrix(int[][] ruleMatrix) {
-        this.ruleMatrix = ruleMatrix;
-    }
-
-    public void fillRuleMatrix(){
-
-    }
-}
+import java.util.Random;
 
 public class GameResultPresenter {
+    private Model uModel;
+
+    private int[][] mGameRuleMatrix;
+    private Rule rule;
+    private int result;
+    //public void
 
 
 
 
-    public void randomChoice(){
 
+    public static int playerTwoChoice(int[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
     }
 
-    public void selectWinner(int playerOneChoice, int playerTwoChoice){
-        Rule firsPlayerDim = new Rule();
-        Rule secondPlayerDim = new Rule();
-        Rule ruleMatrix = new Rule();
 
-        firsPlayerDim.setFirsPlayerDim(3);
-        secondPlayerDim.setSecondPlayerDim(3);
+    //
+    public int selectWinner(int playerOneChoice){
+        uModel = new Model();
+        rule = uModel.createRuleMatrix(3,3);
 
 
-        ruleMatrix.setRuleMatrix(new int[firsPlayerDim.getFirsPlayerDim()][secondPlayerDim.getSecondPlayerDim()]);
-        int[][] matrix = ruleMatrix.getRuleMatrix();
-        for (int[] row : matrix)
-            Arrays.fill(row, 10);
-
+        mGameRuleMatrix = rule.getRuleMatrix();
+        int[] ar = new int[]{0,1,2};
+        result = mGameRuleMatrix[playerOneChoice][playerTwoChoice(ar)];
         //ruleMatrix = new int[firsPlayerDim.getFirsPlayerDim()][secondPlayerDim.getSecondPlayerDim()];
+        return result;
+
+    }
 
 
 
     }
 
-
-}

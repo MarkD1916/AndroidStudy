@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String selectedShear = "shear";
-    public static final String selectedStone = "stone";
-    public static final String selectedPaper = "paper";
+    public static final String selectedItem = "Item";
+
 
     private Intent makeChoice;
 
+    private MainPresenter presenter;
 
 
     @Override
@@ -23,21 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectShear(View view){
         makeChoice = new Intent(this,GameResult.class);
-        makeChoice.putExtra(selectedShear,1);
-        startActivityForResult(makeChoice,1);
+        makeChoice.putExtra(selectedItem,0);
+        startActivity(makeChoice);
     }
 
     public void selectStone(View view){
         makeChoice = new Intent(this,GameResult.class);
-        makeChoice.putExtra(selectedStone,2);
-        startActivityForResult(makeChoice,1);
+        makeChoice.putExtra(selectedItem,1);
+        startActivity(makeChoice);
 
     }
 
     public void selectPaper(View view){
         makeChoice = new Intent(this,GameResult.class);
-        makeChoice.putExtra(selectedPaper,3);
-        startActivityForResult(makeChoice,1);
+        makeChoice.putExtra(selectedItem,2);
+        startActivity(makeChoice);
 
     }
 }
