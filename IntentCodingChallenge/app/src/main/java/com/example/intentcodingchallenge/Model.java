@@ -1,5 +1,8 @@
 package com.example.intentcodingchallenge;
 
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+
 class Rule{
     private int firsPlayerDim;
     private int secondPlayerDim;
@@ -55,6 +58,13 @@ public class Model {
         matrix[2][2]=0;
         ruleMatrix.setRuleMatrix(matrix);
         return ruleMatrix;
+    }
+    public int selectItemPic(int selectedItem){
+
+        int[] myImageList = new int[]{R.drawable.sharepic, R.drawable.stonepic,R.drawable.paperpic};
+
+        return myImageList[selectedItem];
+
     }
 
 }
