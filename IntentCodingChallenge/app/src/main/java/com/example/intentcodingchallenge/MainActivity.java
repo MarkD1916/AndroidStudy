@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(makeChoice,TEXT_REQUEST);
 
     }
-    public void test(){
-        int a = 0;
-    }
+   
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -66,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 firstPlayerCountLable = findViewById(R.id.playerOneCount);
                 secondPlayerCountLable = findViewById(R.id.playerTwoCount);
                 presenter.countScore(reply);
-
-
                 firstPlayerCountLable.setText(String.valueOf(presenter.getCountFirstPlayer()));
                 secondPlayerCountLable.setText(String.valueOf(presenter.getCountSecondPlayer()));
             }
