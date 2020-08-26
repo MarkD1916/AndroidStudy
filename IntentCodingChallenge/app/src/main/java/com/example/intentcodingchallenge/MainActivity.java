@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(makeChoice,TEXT_REQUEST);
 
     }
-   
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
