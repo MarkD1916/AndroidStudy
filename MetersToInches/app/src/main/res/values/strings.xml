@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">MetersToInches</string>
-    <string-array name="catNames">
-        <item>Барсик</item>
-        <item>Мурзик</item>
-        <item>Васька</item>
-        <item>Рыжик</item>
-    </string-array>
+    <string name="result">RESULT</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
 </resources>
