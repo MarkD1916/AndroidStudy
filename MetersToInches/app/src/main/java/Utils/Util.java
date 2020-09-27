@@ -9,5 +9,5 @@ public class Util {
     //Constant table columns
     public static final String KEY_ID = "id";
     public static final String KEY_LENGTH_NAME = "lengthName";
-    public static final String KEY_LENGTH_COEFFICIENT = "lengthCoefficient";
+    public static final String LENGTH_COEFFICIENT_METR = "lengthCoefficientMetr";
 }

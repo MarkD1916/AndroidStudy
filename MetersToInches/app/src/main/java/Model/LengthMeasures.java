@@ -3,21 +3,21 @@ package Model;
 public class LengthMeasures {
     private int id;
     private String lengthName;
-    private int lengthCoefficient;
+    private double lengthCoefficientMetr;
 
     public LengthMeasures() {
 
     }
 
-    public LengthMeasures(int id, String lengthName, int lengthCoefficient) {
+    public LengthMeasures(int id, String lengthName, double lengthCoefficientMetr) {
         this.id = id;
         this.lengthName = lengthName;
-        this.lengthCoefficient = lengthCoefficient;
+        this.lengthCoefficientMetr = lengthCoefficientMetr;
     }
 
-    public LengthMeasures(String lengthName, int lengthCoefficient) {
+    public LengthMeasures(String lengthName, double lengthCoefficientMetr) {
         this.lengthName = lengthName;
-        this.lengthCoefficient = lengthCoefficient;
+        this.lengthCoefficientMetr = lengthCoefficientMetr;
     }
 
     public int getId() {
@@ -36,11 +36,11 @@ public class LengthMeasures {
         this.lengthName = lengthName;
     }
 
-    public int getLengthCoefficient() {
-        return lengthCoefficient;
+    public double getLengthCoefficient() {
+        return lengthCoefficientMetr;
     }
 
-    public void setLengthCoefficient(int lengthCoefficient) {
-        this.lengthCoefficient = lengthCoefficient;
+    public void setLengthCoefficient(double lengthCoefficient) {
+        this.lengthCoefficientMetr = lengthCoefficient;
     }
 }
