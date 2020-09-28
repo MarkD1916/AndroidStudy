@@ -3,5 +3,7 @@
     <string name="result">RESULT</string>
     <string name="from">From</string>
     <string name="to">To</string>
+    <string name="_0_0">1.0</string>
+    <string name="calc">Calc</string>
 
 </resources>

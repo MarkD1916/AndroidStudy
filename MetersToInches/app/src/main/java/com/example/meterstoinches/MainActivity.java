@@ -19,28 +19,34 @@ import Data.MainPresenter;
 import Model.LengthMeasures;
 
 public class MainActivity extends AppCompatActivity {
-
+    private MainPresenter presenter = new MainPresenter(this);
+    private TextView inputValueText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        presenter.setInputCoefCoef(1.0);
+        presenter.setOutputCoef(1.0);
 
 
-        //DatabaseHandler db = new DatabaseHandler(this);
-        //LengthMeasures deleteLM = db.getLengthMeasures(1);
+        Spinner fromSpinner = findViewById(R.id.spinnerForStartValue);
+        Spinner toSpinner = findViewById(R.id.spinnerForEndValue);
+//        DatabaseHandler db = new DatabaseHandler(this);
+//        db.addLengthMeasures(new LengthMeasures("Meter",1.0));
+//        LengthMeasures deleteLM = db.getLengthMeasures(7);
         //db.addLengthMeasures(new LengthMeasures("Mile",1609.3));
 //        db.addLengthMeasures(new LengthMeasures("Furlong",201.17));
 //        db.addLengthMeasures(new LengthMeasures("Chain",20.117));
 //        db.addLengthMeasures(new LengthMeasures("Perch",5.029));
 //        db.addLengthMeasures(new LengthMeasures("link",0.2011));
 
-        //db.deleteLengthMeasure(deleteLM);
+//        db.deleteLengthMeasure(deleteLM);
 //        List<LengthMeasures> lengthMeasuresList = db.getAllLengthMeasures();
 //        for (LengthMeasures l: lengthMeasuresList) {
 //            String log = "ID: " + l.getId() + " NAME: " + l.getLengthName() + " COEF " + l.getLengthCoefficient();
 //            Log.d("NAME: ", log);
 //        }
-        final MainPresenter presenter = new MainPresenter(this);
+
 
         List<String> lengthMeasuresNamesList = presenter.getMeasuresName();
 //        for (String l: lengthMeasuresNamesList) {
@@ -51,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lengthMeasuresNamesList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner fromSpinner = findViewById(R.id.spinnerForStartValue);
+        inputValueText = findViewById(R.id.inputValue);
         fromSpinner.setAdapter(adapter);
+//        double inputStartValue = Double.parseDouble(inputValueText.getText().toString());
+
+
         //final String selectedMeasureName = fromSpinner.getSelectedItem().toString();
         //double selectCoefByName = presenter.getMeasuresCoefMetr(selectedMeasureName);
 //        String log = " NAME: " + selectedMeasureName + " COEF: " + selectCoefByName;
@@ -60,16 +69,12 @@ public class MainActivity extends AppCompatActivity {
         fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.d("Onitem: ",adapterView.getItemAtPosition(i).toString());
-                String name = adapterView.getItemAtPosition(i).toString();
-                MainPresenter presenterName = new MainPresenter(MainActivity.this,name);
+                //Log.d("Onitem: ",adapterView.getItemAtPosition(i).toString());
+                String nameInputMeasure = adapterView.getItemAtPosition(i).toString();
+                MainPresenter presenterName = new MainPresenter(MainActivity.this,nameInputMeasure);
                 double selectCoefByName = presenterName.getMeasuresCoefMetr();
-                presenter.setCoef(selectCoefByName);
-                TextView inputValueText = findViewById(R.id.inputValue);
-                double inputValue = Double.parseDouble(inputValueText.getText().toString());
-                presenter.setValue(inputValue);
-                double transformMeasureValue = presenter.getTransformMeasure();
-                Toast.makeText(getBaseContext(), "Position = " + transformMeasureValue, Toast.LENGTH_SHORT).show();
+                presenter.setInputCoefCoef(selectCoefByName);
+
 
             }
 
@@ -79,5 +84,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        toSpinner.setAdapter(adapter);
+        toSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String nameOutputMeasure = adapterView.getItemAtPosition(i).toString();
+                MainPresenter presenterName = new MainPresenter(MainActivity.this,nameOutputMeasure);
+                double selectCoefByNameOutput = presenterName.getMeasuresCoefMetr();
+                presenter.setOutputCoef(selectCoefByNameOutput);
+                TextView outputValueText = findViewById(R.id.inputValue);
+//                double outputValue = Double.parseDouble(outputValueText.getText().toString());
+//                presenter.setValue(outputValue);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
+ public void calculateMeasure(View view){
+        double inputValue = Double.parseDouble(inputValueText.getText().toString());
+        presenter.setValue(inputValue);
+        double result =  presenter.getTransformMeasure();
+        TextView resultText = findViewById(R.id.labelResult);
+
+        resultText.setText(Double.toString(result));
+
+ }
+
+
 }

@@ -12,7 +12,8 @@ import Model.LengthMeasures;
 
 public class MainPresenter {
 private Context ctx;
-private double coef;
+private double inputCoef;
+private double outputCoef;
 private String measureName;
 private Double value;
 
@@ -26,22 +27,30 @@ private Double value;
     }
 
     public MainPresenter(double coef) {
-        this.coef = coef;
+        this.inputCoef = coef;
     }
 
     public MainPresenter() {
     }
 
-    public double getCoef() {
-        return coef;
+    public double getInputCoefCoef() {
+        return inputCoef;
     }
 
-    public void setCoef(double coef) {
-        this.coef = coef;
+    public void setInputCoefCoef(double coef) {
+        this.inputCoef = coef;
     }
 
     public Double getValue() {
         return value;
+    }
+
+    public double getOutputCoef() {
+        return outputCoef;
+    }
+
+    public void setOutputCoef(double outputCoef) {
+        this.outputCoef = outputCoef;
     }
 
     public void setValue(Double value) {
@@ -59,13 +68,14 @@ private Double value;
     public double getMeasuresCoefMetr(){
         DatabaseHandler db = new DatabaseHandler(ctx);
         LengthMeasures selectCoefByName = db.getLengthMeasuresCoefMetrByName(measureName);
-        coef = selectCoefByName.getLengthCoefficient();
-        return coef;
+        inputCoef = selectCoefByName.getLengthCoefficient();
+        return inputCoef;
     }
 
     public double getTransformMeasure(){
-        double transformMeasure = coef * value;
-        return transformMeasure;
+        double transformMeasureFrom = (inputCoef * value)/outputCoef;
+        return transformMeasureFrom;
     }
+
 
 }
