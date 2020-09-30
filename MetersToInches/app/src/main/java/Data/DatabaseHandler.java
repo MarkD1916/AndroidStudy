@@ -1,5 +1,6 @@
 package Data;
 
+import android.content.ClipboardManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -117,6 +118,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Util.LENGTH_TABLE_NAME, Util.KEY_ID + "=?", new String[] {String.valueOf(length.getId())});
         db.close();
-
     }
+
+
 }
