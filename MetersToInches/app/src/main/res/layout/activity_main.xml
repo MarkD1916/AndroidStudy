@@ -27,35 +27,32 @@
         android:layout_height="30dp"
         android:layout_marginStart="110dp"
         android:layout_marginLeft="110dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
         android:layout_marginRight="110dp"
         android:layout_marginBottom="433dp"
-        android:spinnerMode="dialog"
         android:background="#03A9F4"
+        android:spinnerMode="dialog"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AppBoard" />
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/spinnerForEndValue"
         android:layout_width="187dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="367dp"
         android:background="#03A9F4"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerForStartValue" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerForStartValue"
+        app:layout_constraintVertical_bias="0.435" />
 
     <TextView
         android:id="@+id/labelFrom"
@@ -63,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="444dp"
@@ -74,7 +71,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spinnerForStartValue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AppBoard" />
+        app:layout_constraintTop_toBottomOf="@+id/AppBoard"
+        app:layout_constraintVertical_bias="0.238" />
 
     <TextView
         android:id="@+id/labelTo"
@@ -82,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="29dp"
         android:layout_marginRight="29dp"
         android:layout_marginBottom="376dp"
@@ -93,7 +91,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spinnerForEndValue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelFrom" />
+        app:layout_constraintTop_toBottomOf="@+id/labelFrom"
+        app:layout_constraintVertical_bias="0.346" />
 
     <EditText
         android:id="@+id/inputValue"
@@ -101,29 +100,26 @@
         android:layout_height="41dp"
         android:layout_marginStart="33dp"
         android:layout_marginLeft="33dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
         android:layout_marginBottom="444dp"
         android:hint="@string/_0_0"
+        android:inputType="phone"
         android:text="@string/_0_0"
         android:textSize="14sp"
-        android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/spinnerForStartValue"
-        app:layout_constraintTop_toBottomOf="@+id/AppBoard" />
+        app:layout_constraintTop_toBottomOf="@+id/AppBoard"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/labelResult"
-        android:layout_width="176dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginLeft="102dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginRight="102dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="171dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="280dp"
         android:gravity="center"
         android:text=""
         android:textColor="#03A9F4"
@@ -132,45 +128,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerForEndValue"
+        app:layout_constraintVertical_bias="0.181" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="61dp"
         android:layout_height="59dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginRight="175dp"
+        android:layout_marginBottom="195dp"
         android:background="@drawable/rounded_corners"
         android:onClick="calculateMeasure"
         android:text="@string/calc"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/labelResult"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerForEndValue" />
+        app:layout_constraintTop_toBottomOf="@+id/labelResult"
+        app:layout_constraintVertical_bias="0.213" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="311dp"
-        android:layout_marginLeft="311dp"
-        android:layout_marginTop="367dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="22dp"
         android:onClick="doCopy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/labelResult"
         app:layout_constraintTop_toBottomOf="@+id/inputValue"
+        app:layout_constraintVertical_bias="0.179"
         app:srcCompat="?attr/actionModeCopyDrawable" />
 
 
