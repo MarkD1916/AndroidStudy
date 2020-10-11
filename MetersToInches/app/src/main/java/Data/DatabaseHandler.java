@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.LengthMeasures;
+import Model.WeightMeasures;
 import Utils.Util;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -28,7 +29,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 Util.KEY_ID + " INTEGER PRIMARY KEY," +
                 Util.KEY_LENGTH_NAME + " TEXT," +
                 Util.LENGTH_COEFFICIENT_METR + " REAL" + ")";
+        String CREATE_WEIGHT_MEASURES_TABLE = "CREATE TABLE " + Util.WEIGHT_TABLE_NAME + "(" +
+                Util.KEY_ID + " INTEGER PRIMARY KEY," +
+                Util.KEY_WEIGHT_NAME + " TEXT," +
+                Util.WEIGHT_COEFFICIENT_KILOGRAM + " REAL" + ")";
         db.execSQL(CREATE_LENGTH_MEASURES_TABLE);
+        db.execSQL(CREATE_WEIGHT_MEASURES_TABLE);
     }
 
     @Override
@@ -44,6 +50,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert(Util.LENGTH_TABLE_NAME, null, value);
         db.close();
     }
+    public void addWeightMeasures(WeightMeasures weight){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues value = new ContentValues();
+        value.put(Util.KEY_WEIGHT_NAME,weight.getWeightName());
+        value.put(Util.WEIGHT_COEFFICIENT_KILOGRAM, weight.getWeigthCoefficientKilogram());
+        db.insert(Util.WEIGHT_TABLE_NAME, null, value);
+        db.close();
+    }
+
 
     public LengthMeasures getLengthMeasures(int id){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -53,9 +68,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor!=null) {
             cursor.moveToFirst();
         }
-        LengthMeasures selecedLengthMesures = new LengthMeasures(Integer.parseInt(cursor.getString(0)),
+        return new LengthMeasures(Integer.parseInt(cursor.getString(0)),
                     cursor.getString(1), Double.parseDouble(cursor.getString(2)));
-        return selecedLengthMesures;
     }
 
     public LengthMeasures getLengthMeasuresCoefMetrByName(String name){
@@ -66,9 +80,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor!=null) {
             cursor.moveToFirst();
         }
-        LengthMeasures selecedLengthMesures = new LengthMeasures(
+        return new LengthMeasures(
                 cursor.getString(0), Double.parseDouble(cursor.getString(1)));
-        return selecedLengthMesures;
+    }
+
+    public WeightMeasures getWeightMeasuresCoefKilogramByName(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(Util.WEIGHT_TABLE_NAME, new String[] {Util.KEY_WEIGHT_NAME,
+                        Util.WEIGHT_COEFFICIENT_KILOGRAM}, Util.KEY_WEIGHT_NAME + "=?", new String[] {name},
+                null,null,null,null);
+        if (cursor!=null) {
+            cursor.moveToFirst();
+        }
+        return new WeightMeasures(
+                cursor.getString(0), Double.parseDouble(cursor.getString(1)));
     }
 
     public List<LengthMeasures> getAllLengthMeasures(){
@@ -89,6 +114,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    public List<WeightMeasures> getAllWeightMeasures(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        List <WeightMeasures> weightMeasuresList = new ArrayList<>();
+        String selectAllWeights = "SELECT * FROM " + Util.WEIGHT_TABLE_NAME;
+        Cursor cursor = db.rawQuery(selectAllWeights, null);
+        if (cursor.moveToFirst()){
+            do{
+                WeightMeasures weight = new WeightMeasures();
+                weight.setId(Integer.parseInt(cursor.getString(0)));
+                weight.setWeightName((cursor.getString(1)));
+                weight.setWeigthCoefficientKilogram(Double.parseDouble((cursor.getString(2))));
+                weightMeasuresList.add(weight);
+            } while (cursor.moveToNext());
+        }
+        return weightMeasuresList;
+    }
+
     public List<String> getAllLengthMeasuresName(){
         SQLiteDatabase db = this.getReadableDatabase();
         List <String> lengthMeasuresNameList = new ArrayList<>();
@@ -102,6 +144,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return lengthMeasuresNameList;
+    }
+
+    public List<String> getAllWeightMeasureName(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<String> weightMeasureNamesList = new ArrayList<>();
+        String selectAllWeighNames = "SELECT " + Util.KEY_WEIGHT_NAME + " FROM " + Util.WEIGHT_TABLE_NAME;
+        Cursor cursor = db.rawQuery(selectAllWeighNames, null);
+        if (cursor.moveToFirst()){
+            do {
+                WeightMeasures weight = new WeightMeasures();
+                weight.setWeightName(cursor.getString(0));
+                weightMeasureNamesList.add(weight.getWeightName());
+            } while(cursor.moveToNext());
+        }
+        return weightMeasureNamesList;
     }
 
     public int updateLengthMeasure(LengthMeasures length){

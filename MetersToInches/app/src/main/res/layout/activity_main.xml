@@ -7,113 +7,89 @@
     android:background="@color/colorWhite"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/AppBoard"
-        android:layout_width="326dp"
-        android:layout_height="74dp"
+        android:layout_width="301dp"
+        android:layout_height="66dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="504dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/apppic"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/apppic" />
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/spinnerForStartValue"
         android:layout_width="186dp"
         android:layout_height="30dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
-        android:layout_marginBottom="433dp"
         android:background="#03A9F4"
         android:spinnerMode="dialog"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AppBoard" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/labelFrom"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.882" />
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/spinnerForEndValue"
         android:layout_width="187dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="367dp"
         android:background="#03A9F4"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerForStartValue"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/labelFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="444dp"
         android:text="@string/from"
         android:textColor="#03A9F4"
         android:textSize="19sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerForStartValue"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AppBoard"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.904" />
 
     <TextView
         android:id="@+id/labelTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:layout_marginBottom="376dp"
         android:text="@string/to"
         android:textColor="#03A9F4"
         android:textSize="19sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerForEndValue"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelFrom"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.951" />
 
-    <EditText
+    <TextView
         android:id="@+id/inputValue"
-        android:layout_width="70dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="444dp"
-        android:hint="@string/_0_0"
-        android:inputType="phone"
-        android:text="@string/_0_0"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toEndOf="@+id/spinnerForStartValue"
-        app:layout_constraintTop_toBottomOf="@+id/AppBoard"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_width="186dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:textSize="18sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.375" />
 
     <TextView
         android:id="@+id/labelResult"
@@ -126,31 +102,26 @@
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerForEndValue"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.206" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="61dp"
         android:layout_height="59dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginLeft="175dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="175dp"
-        android:layout_marginRight="175dp"
         android:layout_marginBottom="195dp"
         android:background="@drawable/rounded_corners"
         android:onClick="calculateMeasure"
         android:text="@string/calc"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/labelResult"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -159,11 +130,199 @@
         android:onClick="doCopy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toEndOf="@+id/labelResult"
         app:layout_constraintTop_toBottomOf="@+id/inputValue"
-        app:layout_constraintVertical_bias="0.179"
+        app:layout_constraintVertical_bias="0.297"
         app:srcCompat="?attr/actionModeCopyDrawable" />
+
+    <GridLayout
+        android:layout_width="232dp"
+        android:layout_height="246dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="4dp"
+        android:columnCount="3"
+        android:useDefaultMargins="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+        <Button
+            android:id="@+id/buttonOne"
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="2"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="3"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="4"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="5"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="6"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="7"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="8"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="9"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="0"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:onClick="editValue"
+            android:text="."
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:background="@drawable/rounded_corners"
+
+            android:onClick="deleteValue"
+            android:text="DEL"
+            android:textColor="@color/colorWhite" />
+
+
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="109dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="64dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="64dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="156dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="217dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="298dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="165dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="348dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="75dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
