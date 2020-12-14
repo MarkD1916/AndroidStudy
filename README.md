@@ -4,7 +4,7 @@ Toy example проекты, которые не обязаны нести в с�
 <p align="center">
   <img src="Pict for readme/Tips1" width="200">
   <img src="Pict for readme/Tips2" width="200">
-  <img src="Pict for readme/Tips3" width="200" alt="accessibility text>
+  <img src="Pict for readme/Tips3" width="200">
 </p>
 
 [Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
