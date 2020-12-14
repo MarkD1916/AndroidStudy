@@ -1,11 +1,15 @@
 # AndroidStudy
 Toy example проекты, которые не обязаны нести в себе смысловой нагрузки, а призваны лишь для тренировки различных элементов разработки под Android.
+<p><a href="#Tips">Tips</a></p>
+
 ## Tips
 <p align="center">
   <img src="Pict for readme/Tips1" width="200">
   <img src="Pict for readme/Tips2" width="200">
   <img src="Pict for readme/Tips3" width="200">
 </p>
+
+<p><a name="Tips"></a></p>
 
 [Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
 
