@@ -2,9 +2,9 @@
 Toy example проекты, которые не обязаны нести в себе смысловой нагрузки, а призваны лишь для тренировки различных элементов разработки под Android.
 ## Tips
 <p align="center">
-  <img src="Pict for readme/Tips1" width="200" title="hover text">
-  <img src="Pict for readme/Tips2" width="200" alt="accessibility text">
-  <img src="Pict for readme/Tips3" width="200" alt="accessibility text">
+  <img src="Pict for readme/Tips1" width="200">
+  <img src="Pict for readme/Tips2" width="200">
+  <img src="Pict for readme/Tips3" width="200" alt="accessibility text>
 </p>
 
 [Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
@@ -25,9 +25,22 @@ calculateResult - расчитывает чаевые и сигнализиру�
 
 ## IntentCodingChallenge
 <p align="center">
-  <img src="Pict for readme/IntCodChal1" width="200" title="hover text">
-  <img src="Pict for readme/IntCodChal2" width="200" alt="accessibility text">
-  <img src="Pict for readme/IntCodChal4" width="200" alt="accessibility text">
+  <img src="Pict for readme/IntCodChal1" width="200">
+  <img src="Pict for readme/IntCodChal2" width="200">
+  <img src="Pict for readme/IntCodChal4" width="200">
 </p>
 
+
 [Простая адаптация задания](https://github.com/MarkD1916/AndroidStudy/tree/master/IntentCodingChallenge) с [лаболаторных гугла](https://developer.android.com/codelabs/android-training-create-an-activity#7). Реализован переход между двумя активностями с передачей значения выбранным игроком хода, затем случайно выбирается ответный ход, и по заданным правилам выясняется победитель.
+
+## AndroidFundamentalsIntUI 
+
+<p align="center">
+  <img src="Pict for readme/AndrFundUI1.PNG" width="200">
+  <img src="Pict for readme/AndrFundUI2.PNG" width="200">
+</p>
+<p align="center">
+   <img src="Pict for readme/AndrFundUI3.PNG" width="400" title="есть горизонтальный вариант">
+</p> 
+
+[Задание](https://github.com/MarkD1916/AndroidStudy/tree/master/AndroidFundamentalsIntUI) [лаболаторных гугла](https://developer.android.com/codelabs/android-training-layout-editor-part-a?index=..%2F..%2Fandroid-training#1)
