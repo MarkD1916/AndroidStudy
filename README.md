@@ -49,5 +49,7 @@ calculateResult - расчитывает чаевые и сигнализиру�
 <p align="center">
    <img src="Pict for readme/AndrFundUI3.PNG" width="400" title="есть горизонтальный вариант">
 </p> 
+
 <p><a name="AndroidFundamentalsIntUI"></a></p>
+
 [Задание](https://github.com/MarkD1916/AndroidStudy/tree/master/AndroidFundamentalsIntUI) [лаболаторных гугла](https://developer.android.com/codelabs/android-training-layout-editor-part-a?index=..%2F..%2Fandroid-training#1)
