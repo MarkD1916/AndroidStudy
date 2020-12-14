@@ -6,7 +6,8 @@ Toy example проекты, которые не обязаны нести в с�
   <img src="Pict for readme/Tips2" width="200" alt="accessibility text">
   <img src="Pict for readme/Tips3" width="200" alt="accessibility text">
 </p>
-Простое приложение для подсчета чаевых.
+
+[Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
 
 ## SeekPresenter
 
@@ -21,3 +22,12 @@ calculateResult - расчитывает чаевые и сигнализиру�
 ## ButtonAdapter
 
 В ButtonAdapter кнопкам присваиваются имена и background. Через SeekPresenter, который есть в описании модели каждой кнопки, SeekBar устанавливается прогресс и значение остановки через метод setProgress в SeekPresenter
+
+## IntentCodingChallenge
+<p align="center">
+  <img src="Pict for readme/IntCodChal1" width="200" title="hover text">
+  <img src="Pict for readme/IntCodChal2" width="200" alt="accessibility text">
+  <img src="Pict for readme/IntCodChal4" width="200" alt="accessibility text">
+</p>
+
+[Простая адаптация задания](https://github.com/MarkD1916/AndroidStudy/tree/master/IntentCodingChallenge) с [лаболаторных гугла](https://developer.android.com/codelabs/android-training-create-an-activity#7). Реализован переход между двумя активностями с передачей значения выбранным игроком хода, затем случайно выбирается ответный ход, и по заданным правилам выясняется победитель.
