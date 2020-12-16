@@ -21,6 +21,7 @@ Toy example проекты, которые не обязаны нести в с�
 </p>
 
 <p><a name="Tips"></a></p>
+
 <p><a name="ViewModel"></a></p>
 
 [Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
