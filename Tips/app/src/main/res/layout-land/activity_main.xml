@@ -87,7 +87,6 @@
         android:id="@+id/gridLayout"
         android:layout_width="233dp"
         android:layout_height="229dp"
-        android:layout_marginTop="24dp"
         android:columnCount="3"
         android:useDefaultMargins="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +94,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterBillTextView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.153">
 
         <Button
             android:id="@+id/buttonOne"
@@ -106,7 +105,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="1"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -115,7 +114,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="2"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -124,7 +123,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="3"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -133,7 +132,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="4"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -142,7 +141,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="5"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -151,7 +150,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="6"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -160,7 +159,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="7"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -169,7 +168,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="8"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -178,7 +177,7 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="9"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
@@ -187,20 +186,19 @@
             android:background="@drawable/round_button"
             android:onClick="editValue"
             android:text="0"
-
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
             android:layout_width="57dp"
             android:layout_height="wrap_content"
             android:background="@drawable/round_button"
+            android:textColor="#FFFFFF"
             android:onClick="deleteValue"
             android:text="DEL" />
 
 
     </GridLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
