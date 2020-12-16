@@ -15,13 +15,13 @@ Toy example проекты, которые не обязаны нести в с�
   <img src="Pict for readme/Tips2" width="200">
   <img src="Pict for readme/Tips3" width="200">
 </p>
-<p><a name="ViewModel"></a></p>
+
 <p align="center">
   <img src="Pict for readme/tipsLand.jpg" width="400" title="View Model - реализуется смена ориентации">
 </p>
+<p><a name="ViewModel"></a></p>
 
 <p><a name="Tips"></a></p>
-
 
 
 [Простое приложение для подсчета чаевых](https://github.com/MarkD1916/AndroidStudy/tree/master/Tips).
