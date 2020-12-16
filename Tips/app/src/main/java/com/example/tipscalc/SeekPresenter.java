@@ -13,11 +13,13 @@ public class SeekPresenter {
     private TextView resultTextView;
 
     private int seekStopValue;
-    private float bill;
 
     private int smoothnessFactor = 10;
 
     private Context ctx;
+
+    mainActivityViewModel model;
+
 
     public SeekPresenter() {
     }
@@ -27,17 +29,19 @@ public class SeekPresenter {
         this.seekStopValue = seekStopValue;
     }
 
-    public SeekPresenter(Context ctx, SeekBar seekBar, TextView seekValue, TextView enterdBill, TextView resultTextView) {
+    public SeekPresenter(Context ctx, SeekBar seekBar, TextView seekValue, TextView enterdBill, TextView resultTextView,mainActivityViewModel model) {
         this.ctx = ctx;
         this.seekBar = seekBar;
         this.seekValue = seekValue;
         this.enterdBill = enterdBill;
         this.resultTextView = resultTextView;
+        this.model = model;
     }
 
     public void setProgress(int progressValue){
         seekBar.setProgress(progressValue);
         seekStopValue = seekBar.getProgress();
+        model.setSeekStopValue(seekStopValue);
     }
     public void setSeekBarListener() {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -56,20 +60,15 @@ public class SeekPresenter {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 seekBar.setProgress(Math.round((seekBar.getProgress() + (smoothnessFactor / 2)) / smoothnessFactor) * smoothnessFactor);
                 seekStopValue = seekBar.getProgress();
+                model.setSeekStopValue(seekStopValue);
             }
         });
 
     }
-    public boolean calculateResult(){
-            float result = 0.0f;
+    public boolean closeKeyBoard(){
             boolean closekeyBoard;
-
             if (!enterdBill.getText().toString().equals("")){
-                bill = Float.parseFloat(enterdBill.getText().toString());
-                result = (float) (bill * Integer.parseInt(String.valueOf(seekStopValue))*0.001);
-                resultTextView.setText("Tips: " + String.valueOf(result) + " $");
                 closekeyBoard = true;
-
             }
             else{
                 Toast.makeText(ctx,"Please enter a bill amount", Toast.LENGTH_LONG).show();
@@ -77,4 +76,28 @@ public class SeekPresenter {
             }
         return closekeyBoard;
     }
+
+    public float calcResult(){
+        float result = model.calcResult(enterdBill);
+        return result;
+    }
+
+    public String getCurrentResult(){
+        float currentResult = model.getCurrentResule();
+        return "Tips: " + String.valueOf(currentResult)+" $";
+    }
+
+    public String getCurrentBill(){
+        float currentBill = model.getEnterBill();
+        if (currentBill==0.0){
+            return "";
+        }
+        else{
+            return String.valueOf(currentBill);
+        }
+
+    }
+
+
+
 }
